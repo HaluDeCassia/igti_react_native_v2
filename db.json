@@ -1,28 +1,28 @@
 {
   "companies": [
     {
-      "id": 2,
-      "fantasy_name": "hello",
-      "social_name": "hello corp",
-      "cnpj": "123646978943",
-      "address": "Av. Hello Hello",
-      "city": "Hello City"
+      "fantasy_name": "Usina Nuclear de Springfield",
+      "social_name": "Usina Nuclear de Springfield LTDA.",
+      "address": "Av. Hello",
+      "city": "Springfield",
+      "cnpj": "89.738.643/0001-40",
+      "id": 3
     },
     {
-      "id": 3,
-      "fantasy_name": "hello",
-      "social_name": "hello corp",
-      "cnpj": "123646978943",
+      "fantasy_name": "E-corp",
+      "social_name": "E-corp",
       "address": "Av. Hello Hello",
-      "city": "Hello City"
+      "city": "NYC",
+      "cnpj": "44.535.923/0001-13",
+      "id": 4
     },
     {
-      "id": 4,
-      "fantasy_name": "hello",
-      "social_name": "hello corp",
-      "cnpj": "123646978943",
-      "address": "Av. Hello Hello",
-      "city": "Hello City"
+      "fantasy_name": "Wayne Enterprises",
+      "social_name": "Wayne Enterprises, Inc.",
+      "address": "Av. Hello",
+      "city": "Gothan",
+      "cnpj": "16.081.981/0001-89",
+      "id": 5
     }
   ]
 }

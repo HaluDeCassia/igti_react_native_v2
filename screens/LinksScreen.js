@@ -8,23 +8,23 @@ export default function LinksScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <OptionButton
-        icon="md-school"
-        label="Read the Expo documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
+        icon="logo-linkedin"
+        label="Meu Linkedin"
+        onPress={() => WebBrowser.openBrowserAsync('https://www.linkedin.com/in/halu-de-cassia/')}
       />
 
       <OptionButton
-        icon="md-compass"
-        label="Read the React Navigation documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
+        icon="logo-github"
+        label="Meu Github"
+        onPress={() => WebBrowser.openBrowserAsync('https://www.github.com/HaluDeCassia/')}
       />
-
-      <OptionButton
-        icon="ios-chatboxes"
-        label="Ask a question on the forums"
-        onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
-        isLastOption
-      />
+      <br />
+      <Text style={styles.optionText}>
+        <strong>Haluane (Halú) de Cássia <br /> Pereira Amâncio</strong> <br /> <br />
+        App feito para a aula de <br />
+        Arquitetura FrontEnd Mobile <br />
+        No curso de IGTI <br />
+      </Text>
     </ScrollView>
   );
 }
@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 15,
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
     marginTop: 1,
+    textAlign: 'center',
   },
 });
