@@ -1,0 +1,28 @@
+{
+  "companies": [
+    {
+      "id": 2,
+      "fantasy_name": "hello",
+      "social_name": "hello corp",
+      "cnpj": "123646978943",
+      "address": "Av. Hello Hello",
+      "city": "Hello City"
+    },
+    {
+      "id": 3,
+      "fantasy_name": "hello",
+      "social_name": "hello corp",
+      "cnpj": "123646978943",
+      "address": "Av. Hello Hello",
+      "city": "Hello City"
+    },
+    {
+      "id": 4,
+      "fantasy_name": "hello",
+      "social_name": "hello corp",
+      "cnpj": "123646978943",
+      "address": "Av. Hello Hello",
+      "city": "Hello City"
+    }
+  ]
+}

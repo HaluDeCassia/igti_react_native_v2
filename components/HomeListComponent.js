@@ -1,73 +1,64 @@
 import React from 'react';
-//import UserList from '../components/UserList';
+
 import axios from 'axios';
 import {
 	ActivityIndicator,
 	StyleSheet,
 	View
 } from 'react-native';
-import UserList from '../components/UserList'
-//import deviceStorage from '../../constants/deviceStorage';
-export default class HomeListComponent extends React.Component {
+import CompanyList from './CompanyList'
 
-	static navigationOptions = {
-		title: 'Usuários',
-	};
-	constructor(props) {
-		super(props);
-		this.state = {
-			users: [],
-			loading: false,
-			error: false,
-			jwt: ''
-		};
-        console.log("Entrou no construtor");
-	}
-	httpRequestGetAllUsers() {
-		this.setState({ loading: true });
-		const url = 'http://localhost:4000/api/getAllUsers';
+export default function HomeListComponent (props) {
+	const [companies, setCompanies] = React.useState([]);
+	const [loading, setLoading] = React.useState(false);
+
+	function httpRequestGetAllCompanies() {
+		setLoading(true);
+
+		const url = 'http://localhost:4000/companies';
+
 		setTimeout(() => {
 			axios({
 				method: 'GET',
 				url: url
-			
-			}).then((response) => {
-				console.log(response.data)        
-				this.setState({
-					users: response.data,
-					loading: false,
-				});
-			}).catch((error) => {
-				this.setState({
-					loading: false,
-					error: true,
-				})
+			}).then((res) => {
+				console.log(res.data);
+				setCompanies(res.data);
+				setLoading(false);
+			}).catch((err) => {
+				setLoading(false);
+				
+				console.error("Error: ", err);
 			})
 		}, 4000);
 	}
-	componentDidMount() {
-		this.httpRequestGetAllUsers();
-	}
-	render() {
-		if (this.state.loading) {
-			return (
-				<View style={[styles.container, styles.horizontal]}>
-					<ActivityIndicator size="large" color="#0000ff" />
-				</View>
-			);
-		} else {
-			return (
-				<View>
-					<UserList
-						users={this.state.users}
-						onPressItem={pageParams => {											
-							this.props.navigation.navigate('Edit', pageParams);
-						}} />
-				</View>
-			);
-		}
+
+	React.useEffect(() => httpRequestGetAllCompanies(), []);
+
+	if (loading) {
+		return (
+			<View style={[styles.container, styles.horizontal]}>
+				<ActivityIndicator size="large" color="#0000ff" />
+			</View>
+		);
+	} else {
+		return (
+			<View>
+				<CompanyList
+					companies={companies}
+					onPressItem={pageParams => {											
+						props.navigation.navigate('Edit', pageParams);
+					}} 
+				/>
+			</View>
+		);
 	}
 }
+
+HomeListComponent.navigationOptions = {
+	title: 'Empresas'
+};
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,

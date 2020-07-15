@@ -3,42 +3,30 @@ import {
 	Text,
 	View,
 	StyleSheet,
-	Image,
 	TouchableOpacity
 } from 'react-native';
-import { Constants } from 'expo';
 
-const UserItem = props => {
-	const { user, navigateToEditPage } = props;
-	const name = user.name;
-	const phone = user.phone;
-	const email = user.email;
+const CompanyItem = props => {
+	const { company, navigateToEditPage } = props;
+	const name = company.fantasy_name;
+	const cnpj = company.cnpj;
+  const address = company.address + " - " + company.city;
+  
 	return (
 		<View style={styles.item}>
 			<TouchableOpacity onPress={() => {
-				// nesse momento vai navegar executar uma função e passar por parâmentro o user mais essa função será
-				// executada no HomeScreen no codigo onPressItem={pageParams => {
-				//		console.log(pageParams)
-				//		this.props.navigation.navigate('Edit', pageParams);
-				//	}}
-				console.log(user)
-				navigateToEditPage({ user });
+				navigateToEditPage({ company });
 			}}>
-				
 				<View style={styles.container}>
-					<Image
-						style={styles.image}
-						resizeMode={"cover"}
-						source={{ uri: user.img_url }}
-					/>
-					<Text style={styles.txtTitulo}>Name: {name}</Text>
-					<Text style={styles.txtValor}>Telefone:  {phone}</Text>
-					<Text style={styles.txtValor}>Email:  {email}</Text>
+					<Text style={styles.txtTitulo}>Nome: {name}</Text>
+					<Text style={styles.txtValor}>CNPJ:  {cnpj}</Text>
+					<Text style={styles.txtValor}>Endereço:  {address}</Text>
 				</View>
 			</TouchableOpacity>
 		</View>
 	);
 }
+
 const styles = StyleSheet.create({
 	container: {
     flex: 1,
@@ -83,4 +71,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default UserItem;
+export default CompanyItem;
