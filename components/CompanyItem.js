@@ -18,9 +18,9 @@ const CompanyItem = props => {
 				navigateToEditPage({ company });
 			}}>
 				<View style={styles.container}>
-					<Text style={styles.txtTitulo}>Nome: {name}</Text>
-					<Text style={styles.txtValor}>CNPJ:  {cnpj}</Text>
-					<Text style={styles.txtValor}>Endereço:  {address}</Text>
+					<Text style={styles.txtTitulo}>{name}</Text>
+					<Text style={styles.txtValor}><small>CNPJ</small>  {cnpj}</Text>
+					<Text style={styles.txtValor}><small>Endereço</small>  {address}</Text>
 				</View>
 			</TouchableOpacity>
 		</View>
@@ -35,11 +35,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     backgroundColor: '#ecf0f1',
   },
-  image: {
-    height: 80,
-    width: 80,
-    borderRadius: 40,
-  },
 	item: {
 		backgroundColor: '#FFF',
 		borderWidth: 0.5,
@@ -48,27 +43,15 @@ const styles = StyleSheet.create({
 		padding: 10,
 		flexDirection: 'column'
 	},
-	foto: {
-		width: 250,
-		height: 150
-	},
-	destalhesItem: {
-		marginLeft: 20,
-		flex: 1
-	},
 	txtTitulo: {
 		fontSize: 13,
 		color: 'black',
-		marginBottom: 5
+		marginBottom: 5,
+		fontWeight: 'bold'
 	},
 	txtValor: {
 		fontSize: 16,
-		fontWeight: 'bold'
 	},
-	txtDetalhes: {
-		fontSize: 16
-	}
-
 });
 
 export default CompanyItem;

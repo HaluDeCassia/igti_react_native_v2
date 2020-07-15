@@ -4,9 +4,11 @@ import { Content, Form, Item, Input, Label, Button, Icon, Text } from 'native-ba
 import axios from 'axios';
 
 export default function FormScreen(props) {
-  const {id, fantasy_name, social_name, address, city, cnpj} = props.route.params ? props.route.params.company : "";
   const add = props.route.params ? false : true;
+  
+  const {id, fantasy_name, social_name, address, city, cnpj} = props.route.params ? props.route.params.company : "";
 
+  // state
 	const [fantasyName, setFantasyName] = React.useState(fantasy_name || "");
 	const [socialName, setSocialName] = React.useState(social_name || "");
 	const [addressComp, setAddress] = React.useState(address || "");

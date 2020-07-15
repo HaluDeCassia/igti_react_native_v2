@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import CompanyItem from './CompanyItem';
 
 const CompanyList = props => {
